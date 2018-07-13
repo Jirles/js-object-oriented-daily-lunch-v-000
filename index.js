@@ -42,8 +42,10 @@ class Neighborhood {
   meals(){
     const meals = [];
     for(const delivery of this.deliveries()){
-      if !(delivery.mealId in Object.values(meals)){
-        meals.push(delivery.meal());
+        const meal = delivery.meal();
+        if !(meal in meals){
+          meals.push(meal);
+        }
       }
     };
     return meals;
