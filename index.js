@@ -51,7 +51,7 @@ class Neighborhood {
     //};
     //return meals;
     //answer found online:
-    return store.meals.filter(function(meal, index, array, id = this.id){
+    return store.meals.filter(function(meal, index, array){
       return array.indexOf(meal) === index && meal.neighborhoodId === id;
     });
   };
