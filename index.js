@@ -45,8 +45,10 @@ class Neighborhood {
     for(const delivery of this.deliveries()){
       mealIds.add(delivery.mealId);
     };
-    
-    return store.meals.filter(meal => meal.id in meals);
+    for (const id of mealIds){
+      meals.push(store.meals.find(meal => meal.id === id));
+    };
+    return meals;
   };
 };
 
