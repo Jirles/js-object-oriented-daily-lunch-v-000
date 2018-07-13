@@ -40,11 +40,12 @@ class Neighborhood {
     return store.customers.filter(customer => customer.neighborhoodId === this.id);
   };
   meals(){
-    const meals = new Set;
+    const mealIds = new Set;
+    const meals = [];
     for(const delivery of this.deliveries()){
-      meals.add(delivery.mealId);
+      mealIds.add(delivery.mealId);
     };
-    debugger;
+    
     return store.meals.filter(meal => meal.id in meals);
   };
 };
