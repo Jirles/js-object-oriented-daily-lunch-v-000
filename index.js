@@ -40,7 +40,11 @@ class Neighborhood {
     return store.customers.filter(customer => customer.neighborhoodId === this.id);
   };
   meals(){
-
+    const meals = [];
+    for(const delivery of this.deliveries()){
+      meals.push(delivery.meal());
+    };
+    return meals;
   };
 };
 
