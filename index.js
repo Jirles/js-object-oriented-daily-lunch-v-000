@@ -67,7 +67,7 @@ class Meal {
     return customers;
   };
   static byPrice(){
-    return store.meals.sort(function(num1, num2){ return num1 - num2; });
+    return store.meals.sort(function(meal1, meal2){ return meal1.price - meal2.price; });
   };
 };
 
