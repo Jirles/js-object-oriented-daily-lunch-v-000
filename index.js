@@ -43,7 +43,7 @@ class Neighborhood {
     const meals = [];
     for(const delivery of this.deliveries()){
       meals.push(delivery.meal());
-      };
+    };
     return meals;
   };
 };
