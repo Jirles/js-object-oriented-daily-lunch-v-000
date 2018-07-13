@@ -42,9 +42,10 @@ class Neighborhood {
   meals(){
     const meals = [];
     for(const delivery of this.deliveries()){
-      meals.push(delivery.meal());
+      if !(delivery.mealId in Object.values(meals)){
+        meals.push(delivery.meal());
+      }
     };
-    debugger
     return meals;
   };
 };
