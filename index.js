@@ -40,15 +40,20 @@ class Neighborhood {
     return store.customers.filter(customer => customer.neighborhoodId === this.id);
   };
   meals(){
-    const mealIds = new Set;
-    const meals = [];
-    for(const delivery of this.deliveries()){
-      mealIds.add(delivery.mealId);
-    };
-    for (const id of mealIds){
-      meals.push(store.meals.find(meal => meal.id === id));
-    };
-    return meals;
+    //initial implementation
+    //const mealIds = new Set;
+    //const meals = [];
+    //for(const delivery of this.deliveries()){
+      //mealIds.add(delivery.mealId);
+    //};
+    //for (const id of mealIds){
+      //meals.push(store.meals.find(meal => meal.id === id));
+    //};
+    //return meals;
+    //answer found online:
+    return store.meals.filter(function(meal, index, array){
+      return array.indexOf(meal) === index && meal.neighborhoodId === this.id;
+    });
   };
 };
 
