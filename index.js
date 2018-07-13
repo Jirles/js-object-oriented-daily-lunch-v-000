@@ -51,9 +51,10 @@ class Neighborhood {
     //};
     //return meals;
     //answer found online:
-    return store.meals.filter(function(meal, index, array){
-      return array.indexOf(meal) === index && meal.neighborhoodId === id;
-    });
+  //  return store.meals.filter(function(meal, index, array){
+    //  return array.indexOf(meal) === index && meal.neighborhoodId === id;
+    //});
+    return store.meals.filter(meal => array.indexOf(meal) === index && meal.neighborhoodId === this.id)
   };
 };
 
