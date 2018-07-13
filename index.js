@@ -50,7 +50,7 @@ class Neighborhood {
       //meals.push(store.meals.find(meal => meal.id === id));
     //};
     //return meals;
-    return [...new Set(this.deliveries().map(delivery => delivery.meal))]
+    return [...new Set(this.deliveries().map(delivery => delivery.meal()))]
   };
 };
 
