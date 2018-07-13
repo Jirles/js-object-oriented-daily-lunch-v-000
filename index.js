@@ -44,7 +44,7 @@ class Neighborhood {
     for(const delivery of this.deliveries()){
       meals.push(delivery.meal());
     };
-    return meals;
+    return Set.prototype.slice.call(meals);
   };
 };
 
