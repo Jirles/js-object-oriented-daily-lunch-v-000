@@ -50,11 +50,7 @@ class Neighborhood {
       //meals.push(store.meals.find(meal => meal.id === id));
     //};
     //return meals;
-    //answer found online:
-  //  return store.meals.filter(function(meal, index, array){
-    //  return array.indexOf(meal) === index && meal.neighborhoodId === id;
-    //});
-    return store.meals.filter(meal => array.indexOf(meal) === index && meal.neighborhoodId === this.id)
+    return [...new Set(this.deliveries.map(delivery => delivery.meal))]
   };
 };
 
