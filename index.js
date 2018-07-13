@@ -42,11 +42,8 @@ class Neighborhood {
   meals(){
     const meals = [];
     for(const delivery of this.deliveries()){
-        const meal = delivery.meal();
-        if !(meal in meals){
-          meals.push(meal);
-        }
-      }
+      meals.push(delivery.meal());
+      };
     };
     return meals;
   };
